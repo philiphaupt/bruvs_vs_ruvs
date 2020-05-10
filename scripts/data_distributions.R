@@ -19,11 +19,12 @@ subset_dat <- raw_dat %>%
                 # maxn,
                 maxn.sr
                 # trophwip4
-        )
+        ) %>% 
+        drop_na(matched_pair_id)
 
 # Determine TOTAL MaxN per sample using max.sr (which has an upper limit of 44)
-sample_dat <- subset_dat %>% group_by(opcode,
-                                      matched_pair_id,
+sample_dat <- subset_dat %>% group_by(matched_pair_id,
+                                      opcode,
                                       treament) %>%
         summarise(total_maxn_per_sample = sum(maxn.sr))
 
@@ -82,5 +83,9 @@ shapiro.test(unbaited_sample_dat$total_maxn_per_sample)
 
 # Paired t test
 # prep t test dat
-t.test(x = sample_dat$total_maxn_per_sample[sample_dat$treament == "baited"], y = sample_dat$total_maxn_per_sample[sample_dat$treament == "unbaited"], paired = "TRUE", alternative = "two.sided")
-
+t.test(x = sample_dat$total_maxn_per_sample[sample_dat$treament == "baited"], y = sample_dat$total_maxn_per_sample[sample_dat$treament == "unbaited"], paired = TRUE, alternative = "two.sided")
+t.test(x = baited_sample_dat$total_maxn_per_sample, y = unbaited_sample_dat$total_maxn_per_sample, paired = TRUE, alternative = "two.sided")
+pairwise.t.test(sample_dat$total_maxn_per_sample, 
+                g = sample_dat$treament, 
+                paired = TRUE, 
+                alternative = "two.sided")
