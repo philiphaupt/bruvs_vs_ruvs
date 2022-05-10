@@ -1,18 +1,18 @@
 # main script
 rm(list = ls())
-#clean the major habitat categories, like in teh example below.*
+#clean the major habitat categories, like in the example below.*
 
 # this script calls the scripts n a sequence to help workflow and void huge long scripts
 
 #Common libraries
 library(tidyverse)
 
-## SECTION 1) GAMM analysis - this amy be saved as a separate project for each component??
+## SECTION 1) GAMM analysis - this may be saved as a separate project for each component??
 
 # Prepare the data
 source("./scripts/subset_data_for_gamm_analysis.R") 
 
-# Data cleaning - as in phd - replace major habitat values taht are coded as Deep Water to correct habitats if there wasa more suitable alternative
+# Data cleaning - as in PhD - replace major habitat values that are coded as Deep Water to correct habitats if there wasa more suitable alternative
 # major habitat type replacement: Replace Deep water with actual benthic cover
 source("./scripts/replace_majhab_values_comm_matrix.R") 
 # see to do
