@@ -15,6 +15,6 @@ library(vegan)
 library(tidyverse)
 
 # Determine Principal Coordinates (PCO) from the above resemblance matrix
-pco.dis.mgow.lb10 <- wcmdscale(dis.mgow.lb10, eig = TRUE, add = "lingoes") # make sureto add eigenvectors to allow calculation of axes contributions.
+pco.dis.mgow.lb10 <- wcmdscale(dis.mgow.lb10, eig = TRUE, add = "lingoes") # make sure to add eigenvectors to allow calculation of axes contributions.
 
 
