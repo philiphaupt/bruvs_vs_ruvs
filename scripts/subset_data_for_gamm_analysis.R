@@ -1,19 +1,11 @@
 # Aim: Prepare data to send to Ant: select subset of the data, only matched pairs (61 paired samples), long format: species, abundance, trophic group, trophic-size group, sampled area, water column, temperature, depth, geomorphic zones, wave energy, ...
 
-library(tidyverse) 
+library(tidyverse)
 
-# Read data in (most advanced)
-raw_dat <- read_rds("./data/fish.df4.rds")
 
-# There were  a few empty cells with no data in the reef zone for site opcode: 13-10-22_ALD_W_256_#3 which should be 'base'
-# gap fill missing values FOR REEF ZONE
-raw_dat <- raw_dat %>% mutate(
-  reef_zone = ifelse(opcode == '13-10-22_ALD_W_256_#3',"base",reef_zone)
-)
-
-fields <- raw_dat %>% names() %>% as_tibble() %>% arrange(desc(value))
+fields <- raw_dat_cln %>% names() %>% as_tibble() %>% arrange(desc(value))
 # Filter to the BRUVs vs RUVs data set and Select fields needed to determine MaxN distribution
-subset_dat <- raw_dat %>%
+subset_dat <- raw_dat_cln %>%
   filter(project_name == "Aldabra Baseline", # i.e. not tidal data study
          analysed == "TRUE") %>% # has to have been analysed
   select(
