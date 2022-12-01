@@ -1,6 +1,6 @@
 library(tidyverse)
 # Filter to the BRUVs vs RUVs data set and Select fields needed to determine MaxN distribution
-env_dat_susbet_long <- dat_subset_long_cln %>%
+env_dat_susbet_long <- subset_dat %>%
   select(
     site,
     opcode, # individual sample ID

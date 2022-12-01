@@ -85,3 +85,4 @@ vegan::adonis(dis.mgow.lb10 ~ sampled_area_norm + percent_water_norm + temperatu
                add = "lingoes",  
                model = "full"
 )
+

@@ -36,7 +36,7 @@ source("./scripts/log_transform_community_matrix.R") # See note re outlier - red
 # Create a community dissimilarity matrix
 source("./scripts/dissimilarity_distance.R")
 # PCO ordination
-source("./scripts/ordination_pco.R", echo = TRUE)
+file.edit("./scripts/ordination_pco.R", echo = TRUE)
 
 #PERMANOVA using adonis2
 file.edit("./scripts/permanova_analysis.r")
