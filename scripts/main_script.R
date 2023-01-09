@@ -4,7 +4,7 @@ rm(list = ls())
 
 # this script calls the scripts n a sequence to help workflow and void huge long scripts
 
-#Common libraries
+# Common libraries
 library(tidyverse)
 ## SECTION - PRESTART: DATA READING AND CLEANING
 source("./scripts/read_clean_raw_data.R")
@@ -29,14 +29,14 @@ source("./scripts/read_data_generate_community_matrices.R")
 source("./scripts/subset_environmental_variables.R")
 # Check reef zone for 3-10-22_ALD_W_256_#3 - complete it in the file itself, then see next:
 
-# Data should now be prepared, and I should be able to start analysis. 20/02/2022
+# note to self: Data should now be prepared, and I should be able to start analysis: date: 20/02/2022
 
-#log transform community matrix - required for Alt Gower analysis
+# Log transform community matrix - required for (Modified) Alt Gower analysis
 source("./scripts/log_transform_community_matrix.R") # See note re outlier - reducing sample size by one paired sample, as comment from PhD.
 # Create a community dissimilarity matrix
 source("./scripts/dissimilarity_distance.R")
 # PCO ordination
-file.edit("./scripts/ordination_pco.R", echo = TRUE)
+source("./scripts/ordination_pco.R", echo = TRUE)
 
 #PERMANOVA using adonis2
 file.edit("./scripts/permanova_analysis.r")

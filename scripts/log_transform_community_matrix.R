@@ -19,7 +19,7 @@ library(vegan)
 
 # TRANSFORM data
 # Special cases of log (X)+1, and 0 remains zero, as per Anderson et al 2001, and available in decostand, vegan used:
-comm.log.mGow.transform <- decostand(species_community_matrix, "log", logbase = 10)
+sp_log_transform <- decostand(species_community_matrix, "log", logbase = 10)
 # Save as RDS for later recall
-# saveRDS(comm.log.mGow.transform, "E:/stats/aldabra/BRUVs/02_ALD/community/species_level/output/data/comm.log.mGow.transform.rds", ascii = TRUE)
+# saveRDS(comm.log.transform, "E:/stats/aldabra/BRUVs/02_ALD/community/species_level/output/data/comm.log.mGow.transform.rds", ascii = TRUE)
 
