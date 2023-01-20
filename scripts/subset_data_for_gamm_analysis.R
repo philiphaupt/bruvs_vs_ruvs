@@ -6,7 +6,7 @@ library(tidyverse)
 fields <- raw_dat_cln %>% names() %>% as_tibble() %>% arrange(desc(value))
 # Filter to the BRUVs vs RUVs data set and Select fields needed to determine MaxN distribution
 subset_dat <- raw_dat_cln %>%
-  filter(project_name == "Aldabra Baseline", # i.e. not tidal data study
+  filter(project_name == "Aldabra Baseline", # i.e. not tidal data study, only BRUVS vs RUVs data
          analysed == "TRUE") %>% # has to have been analysed
   select(
     date_sampled = Start.date,
