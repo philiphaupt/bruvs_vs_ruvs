@@ -13,7 +13,7 @@ raw_dat <- read_rds("./data/fish.df4.rds")
 # gap fill missing values FOR REEF ZONE - Now corrected!
 raw_dat <- raw_dat %>% mutate(
   reef_zone = if_else(opcode == '13-10-22_ALD_W_256_#3',"base",as.character(reef_zone))
-)
+) #13-10-22_ALD_W_256_#3
 
 
 ## CORRECT HABITAT (MAJOR/BROADSCALE) 
