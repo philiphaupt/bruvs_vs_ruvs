@@ -40,6 +40,8 @@ subset_dat <- raw_dat_cln %>%
 
 
 
+
+
 #---------Clean data: Replace deepwater values as done in Phd analysis
 # Change the majhab benthic cover types that are "Deep Water" to their most apropriate habitat type
 # maj.hab.rplc.df = read.csv ("./data/community_data/maj_hab_deepwater_replacement_20171122.csv", stringsAsFactors=F)

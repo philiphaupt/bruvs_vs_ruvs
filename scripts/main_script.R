@@ -11,7 +11,7 @@ source("./scripts/read_clean_raw_data.R")
 rm(raw_dat)
 
 #Subset data for analysis - which columns to include, and assign new easy to use names.
-source("./scripts/subset_data_for_analysis.R") 
+file.edit("./scripts/subset_data_for_analysis.R") 
 #-------------------------------------------------------------
 ## SECTION 1) GAMM analysis - this may be saved as a separate project for each component??
 

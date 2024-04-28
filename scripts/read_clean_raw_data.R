@@ -39,3 +39,7 @@ raw_dat_cln$habitat <- as.factor(raw_dat_cln$habitat)
 raw_dat_cln <- within(raw_dat_cln, rm(maj.hab.rplc))
 raw_dat_cln %>% distinct(habitat)
 rm(maj.hab.rplc.df)
+
+
+raw_dat_cln <- raw_dat_cln %>% mutate(reef_zone = if_else(reef_zone == "reef top", "slope top", reef_zone))
+
